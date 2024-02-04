@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import Loader from 'react-loader-spinner'
+import Loader from 'react-js-loader'
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
 
 import CartContext from '../../context/CartContext'
@@ -29,6 +29,10 @@ class ProductItemDetails extends Component {
   componentDidMount() {
     this.getProductData()
   }
+
+  // componentDidUpdate() {
+  //   return true
+  // }
 
   getFormattedData = data => ({
     availability: data.availability,
@@ -79,8 +83,8 @@ class ProductItemDetails extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="products-details-loader-container" data-testId="loader">
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    <div className="products-details-loader-container">
+      <Loader type="hourglass" bgColor="red" size={100} />
     </div>
   )
 
